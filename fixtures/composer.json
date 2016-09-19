@@ -1,0 +1,15 @@
+{
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^0.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Acme\\": "dev"
+        }
+    }
+}

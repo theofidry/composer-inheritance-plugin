@@ -1,0 +1,34 @@
+{
+    "name": "theofidry/composer-inheritance-plugin",
+    "description": "Composer plugin to merge multiple sub composer.json files",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Théo FIDRY",
+            "email": "theo.fidry@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Fidry\\Composer\\InheritancePlugin\\": "src/"
+        }
+    },
+    "require": {
+        "wikimedia/composer-merge-plugin": "^1.3",
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "^1.0"
+    },
+    "extra": {
+        "class": "Fidry\\Composer\\InheritancePlugin"
+    },
+    "scripts": {
+        "test": [
+            "composer validate --no-interaction",
+            "parallel-lint src tests",
+            "phpunit --log-junit=reports/unitreport.xml --coverage-text --coverage-html=reports/coverage --coverage-clover=reports/coverage.xml",
+        ]
+    }
+}

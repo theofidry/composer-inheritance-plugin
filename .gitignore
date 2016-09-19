@@ -1,0 +1,4 @@
+vendor/
+vendor-bin/*/vendor/
+fixtures/vendor/
+fixtures/vendor-bin/*/vendor/
