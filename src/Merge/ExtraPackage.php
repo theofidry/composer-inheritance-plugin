@@ -11,10 +11,12 @@
 
 namespace Fidry\Composer\InheritancePlugin\Merge;
 
+use Wikimedia\Composer\Merge\ExtraPackage as WikimediaExtraPackage;
+
 /**
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-final class ExtraPackage extends \Wikimedia\Composer\Merge\ExtraPackage
+final class ExtraPackage extends WikimediaExtraPackage
 {
     /**
      * @inheritdoc

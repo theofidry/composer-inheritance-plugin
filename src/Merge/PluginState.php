@@ -11,10 +11,12 @@
 
 namespace Fidry\Composer\InheritancePlugin\Merge;
 
+use Wikimedia\Composer\Merge\PluginState as WikimediaPluginState;
+
 /**
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-final class PluginState extends \Wikimedia\Composer\Merge\PluginState
+final class PluginState extends WikimediaPluginState
 {
     /**
      * @inheritdoc

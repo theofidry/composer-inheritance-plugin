@@ -23,12 +23,5 @@
     },
     "extra": {
         "class": "Fidry\\Composer\\InheritancePlugin"
-    },
-    "scripts": {
-        "test": [
-            "composer validate --no-interaction",
-            "parallel-lint src tests",
-            "phpunit --log-junit=reports/unitreport.xml --coverage-text --coverage-html=reports/coverage --coverage-clover=reports/coverage.xml",
-        ]
     }
 }

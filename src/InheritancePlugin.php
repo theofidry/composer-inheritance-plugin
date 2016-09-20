@@ -11,15 +11,15 @@
 
 namespace Fidry\Composer\InheritancePlugin;
 
-use Wikimedia\Composer\MergePlugin;
+use Wikimedia\Composer\MergePlugin as WikimediaMergePlugin;
 
 /**
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-final class InheritancePlugin extends MergePlugin
+final class InheritancePlugin extends WikimediaMergePlugin
 {
     /**
      * @inheritdoc
      */
-    const PACKAGE_NAME = 'fidry/composer-inheritance-plugin';
+    const PACKAGE_NAME = 'theofidryfidry/composer-inheritance-plugin';
 }
