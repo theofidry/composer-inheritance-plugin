@@ -18,16 +18,18 @@ cache:
   directories:
     - "$HOME/.composer/cache"
 
-before_script:
+before_install:
+  - echo "$TRAVIS_PHP_VERSION"
   - |
     if [ "$TRAVIS_PHP_VERSION" = "5.3.3" ]; then
       composer config disable-tls true
       composer config secure-http false
+      echo "holla"
     fi
 
 install:
-  - composer --working-dir fixtures --no-interaction update
-  - composer --working-dir fixtures --no-interaction bin all update
+  - composer update --working-dir fixtures --no-interaction
+  - composer update --working-dir fixtures/vendor-bin/sub --no-interaction
 
 script:
   - composer validate --no-interaction
