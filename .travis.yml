@@ -13,6 +13,15 @@ env:
   global:
     - COMPOSER_DISABLE_XDEBUG_WARN=1
 
+matrix:
+  fast_finish: true
+  include:
+    - php: '5.3'
+      env: COMPOSER_FLAGS='--prefer-lowest'
+  allow_failures:
+    - php: nightly
+
+
 cache:
   directories:
     - "$HOME/.composer/cache"
@@ -20,13 +29,19 @@ cache:
 before_install:
   # From https://github.com/travis-ci/travis-ci/issues/5780#issuecomment-196308406
   - |
+    XDEBUG_INI="/home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini"
+    if [ ! -f "$XDEBUG_INI" ]; then
+        return
+    fi
+
     function composer()
     {
-      mv /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ~/xdebug.ini
+      mv $XDEBUG_INI ~/xdebug.ini
       COMPOSER="$(which composer)"
       $COMPOSER "$@"
       STATUS=$?
-      mv ~/xdebug.ini /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+      mv ~/xdebug.ini $XDEBUG_INI
+
       return $STATUS
     }
 
