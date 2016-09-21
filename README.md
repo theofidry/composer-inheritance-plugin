@@ -1,6 +1,6 @@
 # Composer Inheritance Plugin
 
-[![Build Status](https://travis-ci.org/theofidry/composer-inheritance-plugin.svg?branch=master)](https://travis-ci.org/composer-inheritance-plugin)
+[![Build Status](https://travis-ci.org/theofidry/composer-inheritance-plugin.svg?branch=master)](https://travis-ci.org/theofidry/composer-inheritance-plugin)
 
 Opinionated version of [Wikimedia composer-merge-plugin][1] to work in pair with [bamarni/composer-bin-plugin][2].
 
