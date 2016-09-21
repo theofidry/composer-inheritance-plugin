@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Fidry\\Composer\\InheritancePlugin\\": "src/"
+            "Fidry\\Composer\\InheritancePlugin\\": "src"
         }
     },
     "require": {
@@ -22,6 +22,6 @@
         "composer/composer": "^1.0"
     },
     "extra": {
-        "class": "Fidry\\Composer\\InheritancePlugin"
+        "class": "Fidry\\Composer\\InheritancePlugin\\InheritancePlugin"
     }
 }

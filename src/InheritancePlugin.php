@@ -11,6 +11,10 @@
 
 namespace Fidry\Composer\InheritancePlugin;
 
+use Composer\Composer;
+use Composer\IO\IOInterface;
+use Fidry\Composer\InheritancePlugin\Merge\PluginState;
+use Wikimedia\Composer\Logger;
 use Wikimedia\Composer\MergePlugin as WikimediaMergePlugin;
 
 /**
@@ -21,5 +25,23 @@ final class InheritancePlugin extends WikimediaMergePlugin
     /**
      * @inheritdoc
      */
-    const PACKAGE_NAME = 'theofidryfidry/composer-inheritance-plugin';
+    const PACKAGE_NAME = 'theofidry/composer-inheritance-plugin';
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getSubscribedEvents()
+    {
+        return parent::getSubscribedEvents();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function activate(Composer $composer, IOInterface $io)
+    {
+        $this->composer = $composer;
+        $this->state = new PluginState($this->composer);
+        $this->logger = new Logger('inheritance-plugin', $io);
+    }
 }
