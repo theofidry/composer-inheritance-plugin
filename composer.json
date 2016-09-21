@@ -15,13 +15,16 @@
         }
     },
     "require": {
-        "wikimedia/composer-merge-plugin": "^1.3",
-        "composer-plugin-api": "^1.0"
+        "composer-plugin-api": "^1.0",
+        "wikimedia/composer-merge-plugin": "^1.3"
     },
     "require-dev": {
         "composer/composer": "^1.0"
     },
     "extra": {
         "class": "Fidry\\Composer\\InheritancePlugin\\InheritancePlugin"
+    },
+    "config": {
+        "sort-packages": true
     }
 }

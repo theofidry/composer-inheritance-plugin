@@ -11,6 +11,7 @@
 
 namespace Fidry\Composer\InheritancePlugin\Merge;
 
+use Fidry\Composer\InheritancePlugin\InheritancePlugin;
 use Wikimedia\Composer\Merge\ExtraPackage as WikimediaExtraPackage;
 
 /**
@@ -27,7 +28,8 @@ final class ExtraPackage extends WikimediaExtraPackage
         array $merge,
         $state
     ) {
-        unset($merge['fidry/composer-inheritance-plugin']);
+        unset($merge[InheritancePlugin::PACKAGE_NAME]);
+        unset($merge['bamarni/composer-bin-plugin']);
 
         return parent::mergeOrDefer($type, $origin, $merge, $state);
     }

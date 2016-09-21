@@ -2,7 +2,6 @@ sudo: false
 language: php
 
 php:
-  - 5.3.3
   - 5.3
   - 5.4
   - 5.5
@@ -19,13 +18,17 @@ cache:
     - "$HOME/.composer/cache"
 
 before_install:
-  - echo "$TRAVIS_PHP_VERSION"
+  # From https://github.com/travis-ci/travis-ci/issues/5780#issuecomment-196308406
   - |
-    if [ "$TRAVIS_PHP_VERSION" = "5.3.3" ]; then
-      composer config disable-tls true
-      composer config secure-http false
-      echo "holla"
-    fi
+    function composer()
+    {
+      mv /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ~/xdebug.ini
+      COMPOSER="$(which composer)"
+      $COMPOSER "$@"
+      STATUS=$?
+      mv ~/xdebug.ini /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+      return $STATUS
+    }
 
 install:
   - composer update --working-dir fixtures --no-interaction
