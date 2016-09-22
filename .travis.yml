@@ -1,17 +1,13 @@
-sudo: false
 language: php
 
 php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
+  - '5.3'
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
+  - '7.1'
   - nightly
-
-env:
-  global:
-    - COMPOSER_DISABLE_XDEBUG_WARN=1
 
 matrix:
   fast_finish: true
@@ -19,6 +15,7 @@ matrix:
     - php: '5.3'
       env: COMPOSER_FLAGS='--prefer-lowest'
   allow_failures:
+    - php: '7.1'
     - php: nightly
 
 
@@ -44,10 +41,14 @@ before_install:
 
       return $STATUS
     }
+  - |
+    if [ "$TRAVIS_PHP_VERSION" = "7.1" ] || [ "$TRAVIS_PHP_VERSION" = "nightly" ]; then
+      COMPOSER_FLAGS="$COMPOSER_FLAGS --ignore-platform-reqs"
+    fi;
 
 install:
-  - composer update --working-dir fixtures --no-interaction
-  - composer update --working-dir fixtures/vendor-bin/sub --no-interaction
+  - composer update --working-dir fixtures --no-interaction $COMPOSER_FLAGS
+  - composer update --working-dir fixtures/vendor-bin/sub --no-interaction $COMPOSER_FLAGS
 
 script:
   - composer validate --no-interaction
