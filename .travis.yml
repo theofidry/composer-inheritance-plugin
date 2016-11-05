@@ -24,23 +24,7 @@ cache:
     - "$HOME/.composer/cache"
 
 before_install:
-  # From https://github.com/travis-ci/travis-ci/issues/5780#issuecomment-196308406
-  - |
-    XDEBUG_INI="/home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini"
-    if [ ! -f "$XDEBUG_INI" ]; then
-        return
-    fi
-
-    function composer()
-    {
-      mv $XDEBUG_INI ~/xdebug.ini
-      COMPOSER="$(which composer)"
-      $COMPOSER "$@"
-      STATUS=$?
-      mv ~/xdebug.ini $XDEBUG_INI
-
-      return $STATUS
-    }
+  - phpenv config-rm xdebug.ini || true
   - |
     if [ "$TRAVIS_PHP_VERSION" = "7.1" ] || [ "$TRAVIS_PHP_VERSION" = "nightly" ]; then
       COMPOSER_FLAGS="$COMPOSER_FLAGS --ignore-platform-reqs"
