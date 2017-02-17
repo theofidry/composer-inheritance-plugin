@@ -1,7 +1,7 @@
 # Composer Inheritance Plugin
 
 [![Package version](https://img.shields.io/packagist/vpre/theofidry/composer-inheritance-plugin.svg?style=flat-square)](https://packagist.org/packages/theofidry/composer-inheritance-plugin)
-[![Build Status](https://travis-ci.org/theofidry/composer-inheritance-plugin.svg?branch=master)](https://travis-ci.org/theofidry/composer-inheritance-plugin)
+[![Build Status](https://travis-ci.org/theofidry/composer-inheritance-plugin.svg?branch=master&style=flat-square)](https://travis-ci.org/theofidry/composer-inheritance-plugin)
 [![License](https://img.shields.io/badge/license-MIT-red.svg?style=flat-square)](LICENSE)
 
 Opinionated version of [Wikimedia composer-merge-plugin][1] to work in pair with [bamarni/composer-bin-plugin][2].
