@@ -13,6 +13,7 @@ namespace Fidry\Composer\InheritancePlugin;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
+use Composer\Package\Package;
 use Fidry\Composer\InheritancePlugin\Merge\PluginState;
 use Wikimedia\Composer\Logger;
 use Wikimedia\Composer\MergePlugin as WikimediaMergePlugin;
@@ -43,5 +44,26 @@ final class InheritancePlugin extends WikimediaMergePlugin
         $this->composer = $composer;
         $this->state = new PluginState($this->composer);
         $this->logger = new Logger('inheritance-plugin', $io);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function mergeFiles(array $patterns, $required = false)
+    {
+        parent::mergeFiles($patterns, $required);
+
+        $package = $this->composer->getPackage();
+        if (false === $package instanceof Package) {
+            return;
+        }
+
+        $devRequires = $package->getDevRequires();
+
+        unset($devRequires['bamarni/composer-bin-plugin']);
+
+        $package->setDevRequires($devRequires);
+
+        $this->composer->setPackage($package);
     }
 }
