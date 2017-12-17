@@ -17,6 +17,9 @@ matrix:
   allow_failures:
     - php: nightly
 
+branches:
+  only:
+    - master
 
 cache:
   directories:
