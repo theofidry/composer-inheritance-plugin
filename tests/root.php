@@ -14,3 +14,4 @@ require __DIR__.'/../fixtures/vendor/autoload.php';
 \Acme\Application::salute();
 echo PHP_EOL;
 \Acme\DevApplication::salute();
+echo PHP_EOL;
