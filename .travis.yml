@@ -28,14 +28,7 @@ before_install:
       COMPOSER_FLAGS="$COMPOSER_FLAGS --ignore-platform-reqs"
     fi;
 
-install:
-  - composer update --working-dir fixtures --no-interaction $COMPOSER_FLAGS
-  - composer update --working-dir fixtures/vendor-bin/sub --no-interaction $COMPOSER_FLAGS
-
-script:
-  - composer validate --no-interaction
-  - php tests/root.php
-  - php tests/sub.php
+script: make
 
 notifications:
   email: false

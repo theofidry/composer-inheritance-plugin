@@ -15,6 +15,6 @@ class Application
 {
     public static function salute()
     {
-        echo "Hello world!";
+        echo 'Hello world!';
     }
 }
