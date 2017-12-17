@@ -4,3 +4,5 @@
 /fixtures/vendor-bin/*/vendor/
 /vendor/
 /vendor-bin/*/vendor/
+/root.actual
+/sub.actual
