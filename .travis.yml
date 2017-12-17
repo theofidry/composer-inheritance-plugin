@@ -1,23 +1,25 @@
 language: php
 
 php:
-  - '5.3'
   - '5.4'
   - '5.5'
   - '5.6'
   - '7.0'
   - '7.1'
+  - '7.2'
   - nightly
 
 matrix:
   fast_finish: true
   include:
-    - php: '5.3'
+    - php: '5.4'
       env: COMPOSER_FLAGS='--prefer-lowest'
   allow_failures:
-    - php: '7.2'
     - php: nightly
 
+branches:
+  only:
+    - master
 
 cache:
   directories:
@@ -29,14 +31,7 @@ before_install:
       COMPOSER_FLAGS="$COMPOSER_FLAGS --ignore-platform-reqs"
     fi;
 
-install:
-  - composer update --working-dir fixtures --no-interaction $COMPOSER_FLAGS
-  - composer update --working-dir fixtures/vendor-bin/sub --no-interaction $COMPOSER_FLAGS
-
-script:
-  - composer validate --no-interaction
-  - php tests/root.php
-  - php tests/sub.php
+script: make
 
 notifications:
   email: false

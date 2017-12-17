@@ -1,6 +1,8 @@
-composer.lock
-*/*/composer.lock
-vendor/
-vendor-bin/*/vendor/
-fixtures/vendor/
-fixtures/vendor-bin/*/vendor/
+/composer.lock
+/*/*/composer.lock
+/fixtures/vendor/
+/fixtures/vendor-bin/*/vendor/
+/vendor/
+/vendor-bin/*/vendor/
+/root.actual
+/sub.actual

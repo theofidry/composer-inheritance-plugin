@@ -4,22 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c6af5f4f65b4a50fe989d4ebfa716fe",
-    "content-hash": "10530571cd3f49c5079df5548ec11369",
+    "content-hash": "d09b6813fffca114092d9df6f365a663",
     "packages": [],
     "packages-dev": [
         {
             "name": "bamarni/composer-bin-plugin",
-            "version": "v0.0.2",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bamarni/composer-bin-plugin.git",
-                "reference": "311175163050419d27286516398fcaea96996d85"
+                "reference": "62fef740245a85f00665e81ea8f0aa0b72afe6e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bamarni/composer-bin-plugin/zipball/311175163050419d27286516398fcaea96996d85",
-                "reference": "311175163050419d27286516398fcaea96996d85",
+                "url": "https://api.github.com/repos/bamarni/composer-bin-plugin/zipball/62fef740245a85f00665e81ea8f0aa0b72afe6e7",
+                "reference": "62fef740245a85f00665e81ea8f0aa0b72afe6e7",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +32,7 @@
             "extra": {
                 "class": "Bamarni\\Composer\\Bin\\Plugin",
                 "branch-alias": {
-                    "dev-master": "0.0.x-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -45,7 +44,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2016-09-04 07:00:36"
+            "time": "2017-09-11T13:13:58+00:00"
         }
     ],
     "aliases": [],
