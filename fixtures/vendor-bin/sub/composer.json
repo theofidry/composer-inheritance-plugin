@@ -1,5 +1,15 @@
 {
     "require": {
         "theofidry/composer-inheritance-plugin": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Acme\\": "dev"
+        }
     }
 }
