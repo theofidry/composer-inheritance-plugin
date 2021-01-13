@@ -28,6 +28,8 @@ cache:
     - "$HOME/.composer/cache"
 
 before_install:
+  - composer self-update
+  - composer self-update --1
   - |
     if [ "$TRAVIS_PHP_VERSION" = "nightly" ]; then
       COMPOSER_FLAGS="$COMPOSER_FLAGS --ignore-platform-reqs"
