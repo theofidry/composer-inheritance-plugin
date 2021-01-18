@@ -11,7 +11,7 @@ help:
 ##---------------------------------------------------------------------------
 
 test:		## Run all the tests
-test: vendor fixtures/vendor fixtures/vendor-bin/stub/vendor
+test: vendor fixtures/vendor fixtures/vendor-bin/sub/vendor
 	composer validate --no-interaction
 
 	php tests/root.php > root.actual
@@ -34,5 +34,5 @@ vendor:
 fixtures/vendor:
 	composer update --working-dir fixtures --no-interaction ${COMPOSER_FLAGS}
 
-fixtures/vendor-bin/stub/vendor:
+fixtures/vendor-bin/sub/vendor:
 	composer update --working-dir fixtures/vendor-bin/sub --no-interaction ${COMPOSER_FLAGS}

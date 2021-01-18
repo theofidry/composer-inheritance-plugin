@@ -7,7 +7,9 @@ php:
   - '7.0'
   - '7.1'
   - '7.2'
-  - nightly
+  - '7.3'
+  - '7.4'
+  - '8.0'
 
 matrix:
   fast_finish: true
@@ -26,6 +28,7 @@ cache:
     - "$HOME/.composer/cache"
 
 before_install:
+  - composer self-update --1
   - |
     if [ "$TRAVIS_PHP_VERSION" = "nightly" ]; then
       COMPOSER_FLAGS="$COMPOSER_FLAGS --ignore-platform-reqs"
