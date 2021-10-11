@@ -11,7 +11,7 @@
 
 namespace Fidry\Composer\InheritancePlugin\Merge;
 
-use Wikimedia\Composer\Merge\PluginState as WikimediaPluginState;
+use Wikimedia\Composer\Merge\V2\PluginState as WikimediaPluginState;
 
 /**
  * @author Théo FIDRY <theo.fidry@gmail.com>

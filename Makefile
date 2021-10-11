@@ -30,9 +30,12 @@ test: vendor fixtures/vendor fixtures/vendor-bin/sub/vendor
 
 vendor:
 	composer update
+	touch $@
 
 fixtures/vendor:
 	composer update --working-dir fixtures --no-interaction ${COMPOSER_FLAGS}
+	touch $@
 
 fixtures/vendor-bin/sub/vendor:
 	composer update --working-dir fixtures/vendor-bin/sub --no-interaction ${COMPOSER_FLAGS}
+	touch $@
