@@ -12,7 +12,7 @@
 namespace Fidry\Composer\InheritancePlugin\Merge;
 
 use Fidry\Composer\InheritancePlugin\InheritancePlugin;
-use Wikimedia\Composer\Merge\ExtraPackage as WikimediaExtraPackage;
+use Wikimedia\Composer\Merge\V2\ExtraPackage as WikimediaExtraPackage;
 
 /**
  * @author Théo FIDRY <theo.fidry@gmail.com>

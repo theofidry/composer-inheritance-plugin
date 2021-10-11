@@ -15,8 +15,8 @@ use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Package\Package;
 use Fidry\Composer\InheritancePlugin\Merge\PluginState;
-use Wikimedia\Composer\Logger;
-use Wikimedia\Composer\MergePlugin as WikimediaMergePlugin;
+use Wikimedia\Composer\Merge\V2\Logger;
+use Wikimedia\Composer\Merge\V2\MergePlugin as WikimediaMergePlugin;
 
 /**
  * @author Théo FIDRY <theo.fidry@gmail.com>
