@@ -22,6 +22,9 @@
     "require-dev": {
         "composer/composer": "^1.0 || ^2.0"
     },
+    "conflict": {
+        "composer/composer": ">=2.0,<2.0.13"
+    },
     "extra": {
         "class": "Fidry\\Composer\\InheritancePlugin\\InheritancePlugin"
     },
